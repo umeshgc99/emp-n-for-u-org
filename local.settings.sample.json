@@ -1,0 +1,12 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "",
+    "FUNCTIONS_WORKER_RUNTIME": "java",
+    "DB_URL": "jdbc:postgresql://localhost:5432/emp",
+    "DB_USER": "emp_app",
+    "DB_PASSWORD": "change-me-local-only",
+    "ENTRA_TENANT_ID": "<your-tenant-id>",
+    "ENTRA_API_AUDIENCE": "api://<your-api-client-id>"
+  }
+}
