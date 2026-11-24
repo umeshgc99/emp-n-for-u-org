@@ -7,6 +7,10 @@
     "DB_USER": "emp_app",
     "DB_PASSWORD": "change-me-local-only",
     "ENTRA_TENANT_ID": "<your-tenant-id>",
-    "ENTRA_API_AUDIENCE": "api://<your-api-client-id>"
+    "ENTRA_API_AUDIENCE": "<api-app-client-id-GUID>"
+  },
+  "Host": {
+    "CORS": "http://localhost:5173",
+    "CORSCredentials": false
   }
 }

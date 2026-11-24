@@ -1,0 +1,42 @@
+:root {
+  --bg: #f5f6fa; --panel: #fff; --ink: #1f2430; --muted: #6b7280; --line: #e3e6ee;
+  --brand: #2f5bea; --ok: #1a7f4b; --bad: #c0392b; --warn: #b7791f;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background: var(--bg); color: var(--ink); }
+h1 { margin-top: 0; }
+button { padding: 6px 12px; border: 1px solid var(--line); background: var(--panel); border-radius: 6px; cursor: pointer; }
+button.primary { background: var(--brand); border-color: var(--brand); color: #fff; }
+button:disabled { opacity: .6; cursor: default; }
+input, select { padding: 7px 9px; border: 1px solid var(--line); border-radius: 6px; font: inherit; min-width: 220px; }
+
+.shell { display: flex; min-height: 100vh; }
+aside { width: 220px; background: #14213d; color: #fff; padding: 16px; display: flex; flex-direction: column; }
+aside h2 { font-size: 18px; margin: 0 0 20px; }
+aside nav { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+aside nav a { color: #cbd5f5; text-decoration: none; padding: 8px 10px; border-radius: 6px; }
+aside nav a.active, aside nav a:hover { background: rgba(255,255,255,.12); color: #fff; }
+.who { display: flex; flex-direction: column; gap: 4px; font-size: 14px; }
+.who small { color: #9fb0e0; }
+main { flex: 1; padding: 28px; max-width: 1000px; }
+
+table { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; margin-bottom: 20px; }
+th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line); font-size: 14px; }
+th { background: #fafbfe; color: var(--muted); font-weight: 600; }
+table.kv { width: auto; min-width: 360px; }
+table.kv th { width: 160px; }
+
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px; margin: 20px 0; }
+.card h3 { margin-top: 0; }
+.field { display: flex; flex-direction: column; gap: 4px; margin-bottom: 10px; font-size: 14px; }
+.field span { color: var(--muted); }
+.muted { color: var(--muted); }
+.error { color: var(--bad); }
+.success { color: var(--ok); }
+
+.badge { padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+.badge.pending { background: #fdf3dc; color: var(--warn); }
+.badge.approved { background: #dff5e8; color: var(--ok); }
+.badge.rejected { background: #fbe3e0; color: var(--bad); }
+
+.login { max-width: 420px; margin: 15vh auto; text-align: center; background: var(--panel); padding: 32px; border-radius: 12px; border: 1px solid var(--line); }

@@ -4,3 +4,7 @@ local.settings.json
 .vscode/
 *.class
 .idea/
+ui/node_modules/
+ui/dist/
+ui/.env
+ui/.env.local

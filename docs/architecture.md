@@ -78,10 +78,11 @@ src/main/resources/db/schema.sql   PostgreSQL schema
 | POST | `/trainings/{id}/decision` | `{"approved": true}` (HR, Director) |
 
 ## Setup checklist
-1. **Entra ID**: register an API app (expose `api://<id>`, define App Roles `Employee`, `HR`, `Director`, `Admin`, assign users/groups) and a SPA app (redirect URI = portal URL, permission to the API).
+1. **Entra ID**: register an API app and a SPA app and define the roles. Step-by-step in [ui/README.md](../ui/README.md#entra-id-setup-one-time). Note: the API app manifest needs `accessTokenAcceptedVersion: 2`, and `ENTRA_API_AUDIENCE` is the API app's client ID GUID (not the `api://` URI).
 2. **PostgreSQL**: create the database and run `src/main/resources/db/schema.sql`. Create employee rows (email must match the user's Entra login) and `leave_balances` rows; the first login links the Entra `oid` automatically.
-3. **App settings** (Function App, ideally Key Vault references): `DB_URL`, `DB_USER`, `DB_PASSWORD`, `ENTRA_TENANT_ID`, `ENTRA_API_AUDIENCE`.
-4. Run locally: `mvn clean package` then `mvn azure-functions:run`.
+3. **App settings** (Function App, ideally Key Vault references): `DB_URL`, `DB_USER`, `DB_PASSWORD`, `ENTRA_TENANT_ID`, `ENTRA_API_AUDIENCE`. Copy `local.settings.sample.json` to `local.settings.json` for local runs (it also sets CORS for the UI dev server).
+4. Backend: `mvn clean package` then `mvn azure-functions:run`.
+5. UI: see [ui/README.md](../ui/README.md) (`npm install`, `npm run dev`).
 
 ## Not built yet (planned)
-React UI (`ui/`), Bicep + GitHub Actions, notifications (Service Bus), payslip storage, admin audit-log endpoint, Flyway migrations, Key Vault / Managed Identity wiring for the DB password, CORS configuration.
+Bicep + GitHub Actions, notifications (Service Bus), payslip storage, admin audit-log endpoint, Flyway migrations, Key Vault / Managed Identity wiring for the DB password, production CORS on the Function App.
